@@ -6,9 +6,6 @@
 
 ---
 
-<!-- SCREENSHOT 1: Full page showing a query result with the chart visible.
-     Suggested query to run: "Top 5 artists by total revenue"
-     Capture the whole browser window so the SQL block, bar chart, and results table are all visible. -->
 ![AskMyDB demo](screenshots/demo.png)
 
 ---
@@ -56,21 +53,10 @@ DATABASE_URL=postgresql://askmydb:askmydb@localhost:5432/askmydb python eval.py
 
 ## Screenshots
 
-> Add these after capturing — see instructions below each placeholder.
-
-### Query with bar chart
-<!-- Run: "Top 5 artists by total revenue"
-     Capture: full browser window showing the SQL block, bar chart, and results table -->
-![Top 5 artists](screenshots/top-artists.png)
-
 ### Line chart (time series)
-<!-- Run: "Monthly sales totals in 2021"
-     Capture: the line chart rendering with months on the x-axis -->
 ![Monthly sales](screenshots/monthly-sales.png)
 
 ### Schema-aware SQL generation
-<!-- Run: "Which customers are from Brazil?"
-     Capture: just the SQL block to show quoted identifiers and correct schema usage -->
 ![Generated SQL](screenshots/generated-sql.png)
 
 ---
@@ -91,7 +77,7 @@ DATABASE_URL=postgresql://askmydb:askmydb@localhost:5432/askmydb python eval.py
 
 ## Demo database
 
-Ships with a Chinook-inspired music store: **Artists → Albums → Tracks → Customers → Invoices → InvoiceLines**. Good for revenue, popularity, and time-series queries out of the box.
+Ships with a [Chinook][chinook]-inspired music store: **Artists → Albums → Tracks → Customers → Invoices → InvoiceLines**. Good for revenue, popularity, and time-series queries out of the box.
 
 Example questions that work well:
 - *Top 5 artists by total revenue*
@@ -182,3 +168,19 @@ askmydb/
 │   └── eval.py          # Execution-accuracy eval
 └── docker-compose.yml
 ```
+
+---
+
+## References
+
+- [Chinook Database][chinook] — open-source sample database modelling a digital music store, widely used for SQL demos and benchmarks
+- [Spider benchmark][spider] — large-scale NL→SQL dataset used as the standard for text-to-SQL evaluation
+- [OpenAI function calling][fn-calling] — structured output mechanism used to force the model to return valid SQL rather than free-text
+- [FastAPI][fastapi] — Python web framework used for the backend API
+- [Recharts][recharts] — composable charting library for React
+
+[chinook]: https://github.com/lerocha/chinook-database
+[spider]: https://yale-lily.github.io/spider
+[fn-calling]: https://platform.openai.com/docs/guides/function-calling
+[fastapi]: https://fastapi.tiangolo.com
+[recharts]: https://recharts.org
